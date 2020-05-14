@@ -8,7 +8,7 @@ import java.util.Stack;
 /**
  * @author cyj
  * @name MaxDepth
- * @description TODO
+ * @description TODO 二叉树的最大深度/最大路径
  * @date 2020/5/13 13:39
  * Version 1.0
  */
@@ -31,7 +31,22 @@ public class MaxDepth {
     public int maxDepth(TreeNode root) {
         return depth(root);
     }
+    /*
+     * 递归
+     */
     public int depth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int left = maxDepth(root.left) + 1;
+        int right = maxDepth(root.right) + 1;
+        return Math.max(left, right);
+    }
+
+    /*
+     * 栈
+     */
+    public int depth1(TreeNode root) {
         if (null == root) {
             return 0;
         }
@@ -50,6 +65,7 @@ public class MaxDepth {
             }
         }
         return h;
+
     }
 
 }
