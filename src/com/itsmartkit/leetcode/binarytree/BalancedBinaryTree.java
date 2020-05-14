@@ -1,4 +1,4 @@
-package com.itsmartkit.leetcode;
+package com.itsmartkit.leetcode.binarytree;
 
 /**
  * @ClassName BalancedBinaryTree
