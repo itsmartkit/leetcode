@@ -1,4 +1,6 @@
-package com.itsmartkit.leetcode;
+package com.itsmartkit.leetcode.linkedlist;
+
+import com.itsmartkit.leetcode.linkedlist.common.ListNode;
 
 /**
  * @author cyj
@@ -42,14 +44,5 @@ public class MergeTwoLists {
         }
         cur.next = l1 == null ? l2 : l1;
         return head.next;
-    }
-
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-        }
     }
 }

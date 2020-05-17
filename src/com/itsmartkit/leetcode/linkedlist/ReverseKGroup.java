@@ -1,4 +1,6 @@
-package com.itsmartkit.leetcode;
+package com.itsmartkit.leetcode.linkedlist;
+
+import com.itsmartkit.leetcode.linkedlist.common.ListNode;
 
 /**
  * @ClassName ReverseKGroup
@@ -56,15 +58,6 @@ public class ReverseKGroup {
             head = next;
         }
         return pre;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 
 }

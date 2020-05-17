@@ -1,4 +1,6 @@
-package com.itsmartkit.leetcode;
+package com.itsmartkit.leetcode.linkedlist;
+
+import com.itsmartkit.leetcode.linkedlist.common.ListNode;
 
 /**
  * @author cyj
@@ -31,14 +33,5 @@ public class GetKthFromEnd {
             cur = cur.next;
         }
         return res;
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 }
