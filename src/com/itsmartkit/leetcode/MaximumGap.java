@@ -1,5 +1,7 @@
 package com.itsmartkit.leetcode;
 
+import java.util.Arrays;
+
 /**
  * @author cyj
  * @name MaximumGap
@@ -24,6 +26,8 @@ public class MaximumGap {
         你可以假设数组中所有元素都是非负整数，且数值在 32 位有符号整数范围内。
         请尝试在线性时间复杂度和空间复杂度的条件下解决此问题。
      */
+
+    // 桶排序
     public int maximumGap(int[] nums) {
         if (nums.length < 2) {
             return 0;
@@ -67,6 +71,18 @@ public class MaximumGap {
             preMax = buckets[i].max;
         }
         return maxGap;
+    }
+
+    public int maximumGap1(int[] nums) {
+        if (nums.length < 2) {
+            return 0;
+        }
+        Arrays.sort(nums);
+        int maxValue = 0;
+        for (int i = 1; i < nums.length; i++) {
+            maxValue = Math.max(nums[i] - nums[i - 1], maxValue);
+        }
+        return maxValue;
     }
 
     private static class Bucket {
