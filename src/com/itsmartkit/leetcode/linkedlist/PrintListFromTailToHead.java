@@ -3,7 +3,8 @@ package com.itsmartkit.leetcode.linkedlist;
 import com.itsmartkit.leetcode.linkedlist.common.ListNode;
 
 import java.util.ArrayList;
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @author cyj
@@ -27,7 +28,7 @@ public class PrintListFromTailToHead {
 
     // 1.栈
     public ArrayList<Integer> printListFromTailToHead1(ListNode listNode) {
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new LinkedList<>();
         ListNode cur = listNode;
         while (cur != null) {
             stack.push(cur.val);

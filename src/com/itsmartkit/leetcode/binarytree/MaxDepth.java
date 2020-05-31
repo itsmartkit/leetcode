@@ -3,7 +3,8 @@ package com.itsmartkit.leetcode.binarytree;
 import com.itsmartkit.leetcode.binarytree.common.TreeNode;
 import javafx.util.Pair;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @author cyj
@@ -50,7 +51,7 @@ public class MaxDepth {
         if (null == root) {
             return 0;
         }
-        Stack<Pair<TreeNode, Integer>> stack = new Stack<>();
+        Deque<Pair<TreeNode, Integer>> stack = new LinkedList<>();
         stack.push(new Pair<>(root, 1));
         int h = 1;
         Pair<TreeNode, Integer>  pair = null;

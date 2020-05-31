@@ -1,6 +1,7 @@
 package com.itsmartkit.leetcode;
 
-import java.util.Stack;
+import java.util.Deque;
+import java.util.LinkedList;
 
 /**
  * @author cyj
@@ -17,12 +18,12 @@ public class SortedStack {
         该栈支持如下操作：push、pop、peek 和 isEmpty。当栈为空时，peek 返回 -1。
      */
 
-    private Stack<Integer> stack;
-    private Stack<Integer> maxStack;
+    private Deque<Integer> stack;
+    private Deque<Integer> maxStack;
 
     public SortedStack() {
-        stack = new Stack<>();
-        maxStack = new Stack<>();
+        stack = new LinkedList<>();
+        maxStack = new LinkedList<>();
     }
 
     public void push(int val) {
