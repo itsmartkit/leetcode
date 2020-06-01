@@ -22,6 +22,7 @@ public class ForkJoinDemo extends RecursiveTask<Integer> {
 
     private Integer[] data;
     private int m;
+
     public ForkJoinDemo(Integer[] data, int m) {
         this.data = data;
         this.m = m;
@@ -33,7 +34,7 @@ public class ForkJoinDemo extends RecursiveTask<Integer> {
             return doSum(data);
         } else {
             int mid = data.length / 2;
-            ForkJoinDemo task1 = new ForkJoinDemo(Arrays.copyOfRange(data,0, mid), m);
+            ForkJoinDemo task1 = new ForkJoinDemo(Arrays.copyOfRange(data, 0, mid), m);
             ForkJoinDemo task2 = new ForkJoinDemo(Arrays.copyOfRange(data, mid, data.length), m);
             invokeAll(task1, task2);
             return task1.join() + task2.join();
@@ -50,13 +51,13 @@ public class ForkJoinDemo extends RecursiveTask<Integer> {
 
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
-        for (int i = 1 ; i <= 100000; i++) {
+        for (int i = 1; i <= 100000; i++) {
             list.add(i);
         }
         ForkJoinPool pool = new ForkJoinPool();
-        Future<Integer> result = pool.submit(new ForkJoinDemo(list.toArray(new Integer[list.size()]),10000));
+        Future<Integer> result = pool.submit(new ForkJoinDemo(list.toArray(new Integer[list.size()]), 10000));
         try {
-            System.out.println((list.get(0)+list.get(list.size() - 1)) * list.size() / 2);
+            System.out.println((list.get(0) + list.get(list.size() - 1)) * list.size() / 2);
             long s = System.currentTimeMillis();
             System.out.println(result.get());
             System.out.println(System.currentTimeMillis() - s);
