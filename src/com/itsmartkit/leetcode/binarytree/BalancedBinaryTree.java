@@ -1,5 +1,7 @@
 package com.itsmartkit.leetcode.binarytree;
 
+import com.itsmartkit.leetcode.binarytree.common.TreeNode;
+
 /**
  * @ClassName BalancedBinaryTree
  * @Description TODO
@@ -45,14 +47,6 @@ public class BalancedBinaryTree {
         }
         return false;
     }
-
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
 
 }
 
